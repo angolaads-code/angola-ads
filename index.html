@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ANGOLA ADS — divulga produtos e serviços em Angola.">
+<title>ANGOLA ADS | Mercado Digital Angolano</title>
+<style>
+:root{--navy:#10233f;--blue:#1769e0;--gold:#f7b731;--bg:#f4f7fb;--text:#182338;--muted:#64748b;--line:#e1e8f0}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}button,input,select,textarea{font:inherit}
+header{background:var(--navy);color:white;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-size:1.45rem;font-weight:900}.brand span{color:var(--gold)}.tagline{font-size:.85rem;color:#d8e4f5;margin-top:4px}
+button{border:0;border-radius:9px;padding:11px 15px;font-weight:750;cursor:pointer}.primary{background:var(--gold);color:#17233b}.outline{background:transparent;color:white;border:1px solid #71839d}.secondary{background:#edf2f7;color:#17233b}
+.hero{padding:42px 5%;background:linear-gradient(120deg,#10233f,#164b87);color:white}.hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.3fr .7fr;gap:25px;align-items:center}
+.eyebrow{color:var(--gold);font-size:.78rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.06;margin:12px 0} .hero p{color:#dbe7f6;line-height:1.6}
+.search{display:flex;gap:8px;margin-top:18px}.search input{flex:1;min-width:0}.hero-card{background:white;color:var(--text);padding:22px;border-radius:16px}.hero-card p{color:var(--muted);font-size:.9rem}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--text)}main{max-width:1100px;margin:auto;padding:28px 5% 55px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}h2{margin:0 0 7px}.muted{color:var(--muted);font-size:.9rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.chip{background:white;border:1px solid var(--line);border-radius:99px;padding:9px 13px}.chip.active{background:var(--navy);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.ad{background:white;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}.picture{height:130px;background:linear-gradient(135deg,#eaf1fb,#d9e6f6);display:grid;place-items:center;font-size:3rem}.ad-body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}.category{font-size:.72rem;text-transform:uppercase;color:var(--blue);font-weight:800}.ad h3{margin:0;font-size:1.05rem;overflow-wrap:anywhere}.price{font-weight:850;color:var(--navy)}.ad p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.45;overflow-wrap:anywhere}.meta{margin-top:auto;padding-top:6px;font-size:.8rem;color:var(--muted)}.wa{display:block;text-align:center;text-decoration:none;background:#16a34a;color:white;padding:10px;border-radius:8px;font-weight:800}.empty{grid-column:1/-1;background:white;border:1px dashed #bbc7d7;border-radius:13px;padding:30px;text-align:center;color:var(--muted)}
+.note{margin:22px 0;background:#fff8e5;border:1px solid #f4d88d;color:#684b00;border-radius:9px;padding:13px;font-size:.86rem;line-height:1.5}
+footer{background:var(--navy);color:#d8e4f5;text-align:center;padding:24px 5%;font-size:.88rem}
+.backdrop{display:none;position:fixed;inset:0;background:#08162bd9;z-index:9;padding:16px;align-items:center;justify-content:center}.backdrop.open{display:flex}.modal{background:white;border-radius:15px;padding:22px;width:min(600px,100%);max-height:92vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.modal-head h2{font-size:1.25rem}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:.88rem;font-weight:750}.full{grid-column:1/-1}.actions{display:flex;gap:10px;margin-top:16px}.actions button{flex:1}.status{padding:10px 12px;border-radius:8px;margin:12px 0;font-size:.9rem;display:none}.status.show{display:block}.status.error{background:#fee2e2;color:#991b1b}.status.ok{background:#dcfce7;color:#166534}.admin-list{display:grid;gap:10px;margin-top:15px}.admin-item{border:1px solid var(--line);padding:14px;border-radius:10px}.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.admin-actions button{flex:1}
+@media(max-width:740px){.hero-inner{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.search{flex-direction:column}.hero-card{max-width:480px}}
+@media(max-width:470px){.grid,.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.grid{gap:12px}.picture{height:115px}}
+</style>
+</head>
+<body>
+<header>
+ <div><div class="brand">ANGOLA <span>ADS</span></div><div class="tagline">O teu mercado digital, feito para Angola.</div></div>
+ <div style="display:flex;gap:9px;flex-wrap:wrap"><button class="outline" onclick="document.getElementById('anuncios').scrollIntoView({behavior:'smooth'})">Ver anúncios</button><button class="primary" onclick="openPublish()">+ Publicar anúncio</button></div>
+</header>
+<section class="hero"><div class="hero-inner">
+ <div><div class="eyebrow">Compra · Venda · Serviços</div><h1>O que procuras está mais perto.</h1><p>Descobre produtos e serviços, divulga o teu negócio e fala diretamente com vendedores. Uma plataforma para aproximar pessoas e oportunidades em Angola.</p>
+ <div class="search"><input id="search" placeholder="Pesquisar produto, serviço ou província..." aria-label="Pesquisar anúncios"><button class="primary" onclick="renderAds()">Pesquisar</button></div></div>
+ <div class="hero-card"><h3>📣 Tens algo para divulgar?</h3><p>Envia o teu anúncio gratuitamente. Ele será publicado depois de uma revisão para ajudar a manter a plataforma confiável.</p><button class="primary" style="width:100%" onclick="openPublish()">Publicar gratuitamente</button></div>
+</div></section>
+<main id="anuncios">
+ <div class="section-head"><div><h2>Anúncios aprovados</h2><div class="muted">Só aparecem anúncios revistos pelo administrador.</div></div><div class="muted" id="count"></div></div>
+ <div class="chips" id="chips"><button class="chip active" data-cat="Todos">Todos</button><button class="chip" data-cat="Eletrónica">📱 Eletrónica</button><button class="chip" data-cat="Moda">👕 Moda</button><button class="chip" data-cat="Casa">🏠 Casa</button><button class="chip" data-cat="Serviços">🛠️ Serviços</button><button class="chip" data-cat="Outros">✨ Outros</button></div>
+ <div id="grid" class="grid"><div class="empty">A carregar anúncios…</div></div>
+ <div id="status" class="status"></div>
+ <div class="note"><strong>Segurança:</strong> confirma os detalhes do produto e a identidade do vendedor antes de pagar. O ANGOLA ADS aproxima compradores e vendedores, mas não processa pagamentos nem garante transações.</div>
+</main>
+<footer><strong>ANGOLA ADS</strong> — Um projeto em construção para aproximar negócios e pessoas em Angola.<br><span style="display:inline-block;margin-top:8px">Publicação gratuita nesta fase inicial.</span></footer>
+
+<div class="backdrop" id="publishBackdrop" role="dialog" aria-modal="true" aria-labelledby="publishTitle"><div class="modal">
+ <div class="modal-head"><h2 id="publishTitle">Enviar anúncio para aprovação</h2><button class="secondary" onclick="closePublish()">Fechar ✕</button></div>
+ <div id="publishStatus" class="status"></div>
+ <form id="publishForm"><div class="formgrid">
+  <div class="field full"><label for="seller">Teu nome ou nome do negócio *</label><input id="seller" required maxlength="80" placeholder="Ex.: Maria ou Loja Central"></div>
+  <div class="field full"><label for="title">Título do anúncio *</label><input id="title" required maxlength="90" placeholder="Ex.: Reparação de computadores"></div>
+  <div class="field"><label for="category">Categoria *</label><select id="category" required><option>Eletrónica</option><option>Moda</option><option>Casa</option><option>Serviços</option><option>Outros</option></select></div>
+  <div class="field"><label for="price">Preço (Kz)</label><input id="price" type="number" min="0" placeholder="Deixa vazio se negociável"></div>
+  <div class="field full"><label for="description">Descrição *</label><textarea id="description" rows="3" required maxlength="600" placeholder="Descreve o produto ou serviço..."></textarea></div>
+  <div class="field"><label for="province">Província *</label><input id="province" required maxlength="60" placeholder="Ex.: Luanda"></div>
+  <div class="field"><label for="whatsapp">WhatsApp com indicativo *</label><input id="whatsapp" required maxlength="25" placeholder="Ex.: 244923000000"></div>
+ </div><div class="actions"><button class="secondary" type="button" onclick="closePublish()">Cancelar</button><button class="primary" id="submitBtn" type="submit">Enviar para aprovação</button></div><p class="muted" style="font-size:.78rem;line-height:1.45">Ao enviar, confirmas que o anúncio é verdadeiro e que tens autorização para publicar as informações fornecidas.</p></form>
+</div></div>
+
+<div class="backdrop" id="adminBackdrop" role="dialog" aria-modal="true" aria-labelledby="adminTitle"><div class="modal">
+ <div class="modal-head"><h2 id="adminTitle">Painel do administrador</h2><button class="secondary" onclick="closeAdmin()">Fechar ✕</button></div>
+ <div id="adminStatus" class="status"></div>
+ <div id="adminLogin"><p class="muted">Acesso reservado ao administrador da plataforma.</p><form id="loginForm"><div class="field"><label for="adminEmail">Email do administrador</label><input id="adminEmail" type="email" required autocomplete="username"></div><div class="field" style="margin-top:10px"><label for="adminPassword">Palavra-passe</label><input id="adminPassword" type="password" required autocomplete="current-password"></div><button class="primary" style="width:100%;margin-top:13px">Entrar</button></form></div>
+ <div id="adminPanel" hidden><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><p class="muted" id="adminIdentity"></p><button class="secondary" onclick="logoutAdmin()">Terminar sessão</button></div><h3>Anúncios pendentes</h3><div id="pendingList" class="admin-list"></div></div>
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* CONFIGURAÇÃO: substituir os dois valores pelos dados do teu projeto Supabase. */
+const SUPABASE_URL = "COLOCA_AQUI_A_URL_DO_SUPABASE";
+const SUPABASE_ANON_KEY = "COLOCA_AQUI_A_CHAVE_ANON_PUBLICA";
+const configured = SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("COLOCA_AQUI") && !SUPABASE_ANON_KEY.includes("COLOCA_AQUI");
+const db = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+let activeCat="Todos", adminUser=null;
+const emoji={ "Eletrónica":"📱","Moda":"👕","Casa":"🏠","Serviços":"🛠️","Outros":"✨" };
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function phone(s){return String(s||"").replace(/\D/g,"")}
+function showStatus(id,msg,type="ok"){const el=document.getElementById(id);el.textContent=msg;el.className="status show "+type}
+function clearStatus(id){const el=document.getElementById(id);el.className="status";el.textContent=""}
+function openPublish(){document.getElementById("publishBackdrop").classList.add("open")}
+function closePublish(){document.getElementById("publishBackdrop").classList.remove("open")}
+function openAdmin(){document.getElementById("adminBackdrop").classList.add("open");refreshAdminState()}
+function closeAdmin(){document.getElementById("adminBackdrop").classList.remove("open")}
+function openAdminFromFooter(){openAdmin()}
+function renderCards(rows){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const filtered=rows.filter(a=>(activeCat==="Todos"||a.category===activeCat)&&(!q||[a.title,a.description,a.category,a.province,a.seller_name].join(" ").toLowerCase().includes(q)));
+ document.getElementById("count").textContent=filtered.length+" anúncio(s)";
+ const root=document.getElementById("grid");
+ if(!filtered.length){root.innerHTML='<div class="empty">🔎<br><strong>Não encontrámos anúncios aprovados.</strong><p>Tenta outra palavra ou categoria.</p></div>';return}
+ root.innerHTML=filtered.map(a=>`<article class="ad"><div class="picture">${emoji[a.category]||"📦"}</div><div class="ad-body"><div class="category">${esc(a.category)}</div><h3>${esc(a.title)}</h3><div class="price">${a.price_kz!==null&&a.price_kz!==""&&a.price_kz!==undefined?Number(a.price_kz).toLocaleString("pt-PT")+" Kz":"Preço sob consulta"}</div><p>${esc(a.description)}</p><div class="meta">👤 ${esc(a.seller_name)} · 📍 ${esc(a.province)}</div><a class="wa" href="https://wa.me/${phone(a.whatsapp)}?text=${encodeURIComponent("Olá! Vi o teu anúncio no ANGOLA ADS: "+a.title)}" target="_blank" rel="noopener">Contactar no WhatsApp</a></div></article>`).join("");
+}
+async function renderAds(){
+ if(!db){document.getElementById("grid").innerHTML='<div class="empty">O site está preparado, mas ainda precisa de ser ligado à base de dados para mostrar anúncios online.<br><br>Segue o guia README incluído no pacote para configurar o Supabase gratuitamente.</div>';document.getElementById("count").textContent="";return}
+ document.getElementById("grid").innerHTML='<div class="empty">A carregar anúncios…</div>';
+ const {data,error}=await db.from("ads").select("id,seller_name,title,category,price_kz,description,province,whatsapp").eq("status","approved").order("created_at",{ascending:false});
+ if(error){document.getElementById("grid").innerHTML='<div class="empty">Não foi possível carregar os anúncios. Confirma a configuração da base de dados.</div>';console.error(error);return}
+ renderCards(data||[]);
+}
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");activeCat=b.dataset.cat;renderAds()}));
+document.getElementById("search").addEventListener("keydown",e=>{if(e.key==="Enter")renderAds()});
+document.getElementById("publishForm").addEventListener("submit",async e=>{
+ e.preventDefault();clearStatus("publishStatus");
+ if(!db){showStatus("publishStatus","A base de dados ainda não está configurada. Segue primeiro o guia README.","error");return}
+ const wa=phone(document.getElementById("whatsapp").value);
+ if(wa.length<9||wa.length>15){showStatus("publishStatus","Confirma o WhatsApp e inclui o indicativo do país, por exemplo 244.","error");return}
+ const raw=document.getElementById("price").value;
+ const payload={seller_name:document.getElementById("seller").value.trim(),title:document.getElementById("title").value.trim(),category:document.getElementById("category").value,price_kz:raw===""?null:Number(raw),description:document.getElementById("description").value.trim(),province:document.getElementById("province").value.trim(),whatsapp:wa,status:"pending"};
+ const btn=document.getElementById("submitBtn");btn.disabled=true;btn.textContent="A enviar…";
+ const {error}=await db.from("ads").insert(payload);
+ btn.disabled=false;btn.textContent="Enviar para aprovação";
+ if(error){showStatus("publishStatus","Não foi possível enviar o anúncio. Tenta novamente mais tarde.","error");console.error(error);return}
+ e.target.reset();showStatus("publishStatus","Anúncio enviado! Ficará visível depois de ser aprovado pelo administrador.");renderAds();
+});
+document.getElementById("loginForm").addEventListener("submit",async e=>{
+ e.preventDefault();clearStatus("adminStatus");if(!db){showStatus("adminStatus","Configura primeiro a ligação ao Supabase.","error");return}
+ const {data,error}=await db.auth.signInWithPassword({email:document.getElementById("adminEmail").value,password:document.getElementById("adminPassword").value});
+ if(error){showStatus("adminStatus","Não foi possível iniciar sessão. Confirma os dados do administrador.","error");return}
+ adminUser=data.user;await refreshAdminState();
+});
+async function refreshAdminState(){
+ if(!db){document.getElementById("adminLogin").hidden=false;document.getElementById("adminPanel").hidden=true;return}
+ const {data}=await db.auth.getSession();adminUser=data.session?.user||null;
+ document.getElementById("adminLogin").hidden=!!adminUser;document.getElementById("adminPanel").hidden=!adminUser;
+ if(adminUser){document.getElementById("adminIdentity").textContent="Sessão: "+adminUser.email;await loadPending()}
+}
+async function loadPending(){
+ const root=document.getElementById("pendingList");root.innerHTML='<p class="muted">A carregar…</p>';
+ const {data,error}=await db.from("ads").select("*").eq("status","pending").order("created_at",{ascending:true});
+ if(error){root.innerHTML='<p class="muted">Não foi possível carregar. Confirma se o utilizador tem permissões de administrador.</p>';return}
+ if(!data?.length){root.innerHTML='<p class="muted">Não há anúncios pendentes.</p>';return}
+ root.innerHTML=data.map(a=>`<div class="admin-item"><strong>${esc(a.title)}</strong><p class="muted">${esc(a.seller_name)} · ${esc(a.category)} · ${esc(a.province)}</p><p>${esc(a.description)}</p><p><strong>WhatsApp:</strong> ${esc(a.whatsapp)} · <strong>Preço:</strong> ${a.price_kz==null?"Sob consulta":Number(a.price_kz).toLocaleString("pt-PT")+" Kz"}</p><div class="admin-actions"><button class="primary" onclick="moderate('${a.id}','approved')">Aprovar</button><button class="secondary" onclick="moderate('${a.id}','rejected')">Rejeitar</button></div></div>`).join("");
+}
+async function moderate(id,status){
+ const {error}=await db.from("ads").update({status}).eq("id",id);
+ if(error){showStatus("adminStatus","A alteração falhou. Confirma que este utilizador está na lista de administradores.","error");return}
+ showStatus("adminStatus",status==="approved"?"Anúncio aprovado.":"Anúncio rejeitado.");await loadPending();await renderAds();
+}
+async function logoutAdmin(){if(db)await db.auth.signOut();adminUser=null;await refreshAdminState();clearStatus("adminStatus")}
+document.getElementById("adminBackdrop").addEventListener("click",e=>{if(e.target.id==="adminBackdrop")closeAdmin()});
+renderAds();
+/* Atalho discreto do painel: clicar 5 vezes no nome da marca no rodapé. */
+let footerClicks=0;document.querySelector("footer strong").addEventListener("click",()=>{footerClicks++;if(footerClicks>=5){footerClicks=0;openAdmin()}});
+</script>
+</body></html>
